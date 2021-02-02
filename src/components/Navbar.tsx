@@ -1,3 +1,4 @@
+//styles
 import {Nav, LinkContainer, Link, RightSide, LeftSide} from './Navbar.styles';
 
 export const Navbar = () => {
