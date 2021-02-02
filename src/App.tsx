@@ -4,6 +4,7 @@ import { AppContainer } from "./App.styles"
 import { Navbar } from './components/Navbar';
 import { MainPage } from './components/MainPage';
 
+import './i18n';
 
 const App = () => {
   return (

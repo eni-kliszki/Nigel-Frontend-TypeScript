@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Nav = styled.nav`
     z-index: 2;
     width: 100%;
@@ -24,6 +23,7 @@ export const RightSide = styled.div`
 `
 
 export const LeftSide = styled.div`
+    
 `
 
 export const LinkContainer = styled.div`
