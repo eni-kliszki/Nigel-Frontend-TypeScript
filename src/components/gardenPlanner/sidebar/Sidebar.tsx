@@ -1,10 +1,11 @@
 import React from 'react'
+import { SidebarBlock } from '../styled-components/GardenPlanner.styles';
 
 const Sidebar = () => {
   return (
-    <div>
+    <SidebarBlock>
       
-    </div>
+    </SidebarBlock>
   )
 }
 
