@@ -6,7 +6,7 @@ import { ConveyorContainer,
 //react
 import { useState } from "react";
 
-export const Conveyor = (props) => {
+export const Conveyor = (props : object) => {
     const [ visibleItem, setVisibleItem ] = useState<Object>();
 
     return(

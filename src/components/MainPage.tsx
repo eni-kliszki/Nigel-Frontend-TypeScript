@@ -1,7 +1,10 @@
-
+//Components
+import { Conveyor } from "./Conveyor";
 
 export const MainPage = () => {
     return(
-        <div></div>
+        <div>
+            <Conveyor></Conveyor>
+        </div>
     );
 }
