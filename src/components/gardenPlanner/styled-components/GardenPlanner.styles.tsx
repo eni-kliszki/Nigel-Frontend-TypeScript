@@ -7,7 +7,10 @@ export const GardenPlannerPage = styled.div`
 `
 
 export const GardenContainer = styled.div`
-  width: 600px;
-  height: 400px;
+  width: 40vw;
+  height: 40vw;
   background-color: #8A5A44;
+  position: absolute;
+  top: 5%;
+  left: 10%;
 `
