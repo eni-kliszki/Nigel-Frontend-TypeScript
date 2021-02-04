@@ -1,18 +1,34 @@
-import React from "react";
+import React, {useContext, useState} from "react";
+import { GardenSizeContext } from "../../GardenSizeContext";
 import { SizeModifierBlock } from "../../styled-components/GardenPlanner.styles";
 
 const SizeModifier = () => {
+  const [width, setWidth] = useState<Number>(0)
+  const [height, setHeight] = useState<Number>(0)
+  const [size, setSize] = useContext(GardenSizeContext);
+
+  const onClickHandler = () => {
+    setSize({width: width, height: height})
+  }
+  const widthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setWidth(Number(e.target.value))
+    console.log(size)
+  }
+  const heightChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setHeight(Number(e.target.value))
+  }
+  
   return (
     <SizeModifierBlock>
       <div>
         <span>Width: </span>
-        <input type="text" />
+        <input type="number" onChange={event => widthChange(event)} />
       </div>
       <div>
         <span>Heigth: </span>
-        <input type="text" />
+        <input type="number" onChange={event => heightChange(event)} />
       </div>
-      <button>Set</button>
+      <button onClick={onClickHandler}>Set</button>
     </SizeModifierBlock>
   );
 };
