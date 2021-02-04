@@ -16,3 +16,11 @@ export const ArrowButton = styled.div`
 export const ConveyorItem = styled.div`
 
 `
+
+export const ConveyorItemContent = styled.div`
+
+`
+
+export const ConveyorItemImage = styled.div`
+    background-color: pink;
+`
