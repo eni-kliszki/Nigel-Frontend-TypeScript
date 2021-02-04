@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 export const Navbar = () => {
     const followers = "204.465.173";
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation(); //second object when needed i18n
 
     return (
         <Nav >
