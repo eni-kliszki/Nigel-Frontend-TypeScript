@@ -15,8 +15,8 @@ export const NextButton = styled.div`
     top: 30%;
     width: 5%;
     height: 40%;
-
-    background-color: red;
+    cursor: pointer;
+    background-color: red;         //TEMP
 `
 
 export const PrevButton = styled.div`
@@ -25,8 +25,8 @@ export const PrevButton = styled.div`
     top: 30%;
     width: 5%;
     height: 40%;
-
-    background-color: red;
+    cursor: pointer;
+    background-color: red;         //TEMP
 `
 
 export const ConveyorItem = styled.div`
@@ -35,8 +35,15 @@ export const ConveyorItem = styled.div`
     left: 10%;
     width: 80%;
     height: 90%;
-
+    z-index: 1;
+    transition: 500ms;
+    opacity: 100%;
     background-color: yellowgreen;    //TEMP
+    &.hidden {
+        z-index: 0;
+        opacity: 0;
+        transition: 500ms;
+    }
 
 `
 
