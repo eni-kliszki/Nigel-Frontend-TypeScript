@@ -23,6 +23,11 @@ export const SidebarBlock = styled.div`
   width: 20vw;
   height: 70vh;
   background-color: #A3B18A;
+  color: white;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
 `
 
 export const PlantContainer = styled.div`
@@ -38,4 +43,17 @@ export const Field = styled.div`
   height:50px;
   border: 1px solid black;
   box-sizing: border-box;
+`
+
+export const SizeModifierBlock = styled.div`
+  width: 90%;
+  height: 100px;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content:space-around;
+  background-color: #1B4332;
+  input {
+    width: 60px;
+  }
 `
