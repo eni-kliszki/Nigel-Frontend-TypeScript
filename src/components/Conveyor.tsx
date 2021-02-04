@@ -2,7 +2,9 @@
 import { ConveyorContainer,
         ArrowButton,
         ConveyorItem,
-} from "../styled_components/ConveyorStyles";
+        ConveyorItemContent,
+        ConveyorItemImage,
+} from "../styled_components/Conveyor.styles";
 //react
 import { useState } from "react";
 
@@ -11,7 +13,14 @@ export const Conveyor = (props : object) => {
 
     return(
         <ConveyorContainer>
-            <ConveyorItem></ConveyorItem>
+            <ConveyorItem>
+                <ConveyorItemContent>
+                    Here comes the very great and catch message that makes you click on the article
+                </ConveyorItemContent>
+                <ConveyorItemImage>
+                    This is an image despite appaering to be a pink rectangle
+                </ConveyorItemImage>
+            </ConveyorItem>
         </ConveyorContainer>
     );
 }
