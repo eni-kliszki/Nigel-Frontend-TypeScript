@@ -3,30 +3,59 @@ import styled from "styled-components";
 export const ConveyorContainer = styled.div`
     position: absolute;
     width: 100vw;
-    height: 30vh;
+    height: 50vh;
     background-color: #52B788;
 ;
 
 `
 
-export const ArrowButton = styled.div`
+export const NextButton = styled.div`
+    position: absolute;
+    right: 2%;
+    top: 30%;
+    width: 5%;
+    height: 40%;
 
+    background-color: red;
+`
+
+export const PrevButton = styled.div`
+    position: absolute;
+    left: 2%;
+    top: 30%;
+    width: 5%;
+    height: 40%;
+
+    background-color: red;
 `
 
 export const ConveyorItem = styled.div`
     position: absolute;
     top: 5%;
-    width: 90%;
+    left: 10%;
+    width: 80%;
     height: 90%;
 
-    background-color: pink;
+    background-color: yellowgreen;    //TEMP
 
 `
 
 export const ConveyorItemContent = styled.div`
-
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 50%;
+    height: 90%;
+    font-size: 300%;
+    text-align: justify;
+    background-color: lightblue;      //TEMP
 `
 
 export const ConveyorItemImage = styled.div`
-    background-color: pink;
+    position: absolute;
+    top: 5%;
+    right: 0;
+    width: 50%;
+    height: 90%;
+    background-color: pink;           //TEMP
 `
