@@ -1,10 +1,11 @@
 import React from 'react'
+import { GardenPlannerPage } from './styled-components/GardenPlanner.styles';
 
 const GardenPlanner = () => {
   return (
-    <div>
+    <GardenPlannerPage>
       
-    </div>
+    </GardenPlannerPage>
   )
 }
 
