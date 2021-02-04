@@ -32,3 +32,10 @@ export const PlantContainer = styled.div`
   height: 15vh;
   background-color: #1B4332;
 `
+
+export const Field = styled.div`
+  width:50px;
+  height:50px;
+  border: 1px solid black;
+  box-sizing: border-box;
+`
