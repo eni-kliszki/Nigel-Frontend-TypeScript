@@ -14,6 +14,7 @@ export const GardenContainer = styled.div`
   top: 5%;
   left: 15%;
   border: 5px solid black;
+  overflow: scroll;
 `
 
 export const SidebarBlock = styled.div`
@@ -56,4 +57,18 @@ export const SizeModifierBlock = styled.div`
   input {
     width: 60px;
   }
+`
+
+export const FullField = styled.div<{width: number, height: number}>`
+  position: relative;
+  display: flex;
+  width: ${props => props.width}px;
+  height: ${props => props.width}px;
+  flex-wrap: wrap;
+  flex-grow: 0;
+  flex-shrink: 0;
+  border: 2px solid black;
+  justify-content: flex-start;
+  align-content: flex-start; 
+
 `

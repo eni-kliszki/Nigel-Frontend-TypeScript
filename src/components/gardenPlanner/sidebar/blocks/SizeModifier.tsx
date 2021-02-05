@@ -5,7 +5,7 @@ import { SizeModifierBlock } from "../../styled-components/GardenPlanner.styles"
 const SizeModifier = () => {
   const [width, setWidth] = useState<Number>(0)
   const [height, setHeight] = useState<Number>(0)
-  const [setSize] = useContext(GardenSizeContext);
+  const [,setSize] = useContext(GardenSizeContext);
 
   const onClickHandler = () => {
     setSize({width: width, height: height})
@@ -21,11 +21,11 @@ const SizeModifier = () => {
     <SizeModifierBlock>
       <div>
         <span>Width: </span>
-        <input type="number" onChange={event => widthChange(event)} />
+        <input type="text" onChange={event => widthChange(event)} />
       </div>
       <div>
         <span>Heigth: </span>
-        <input type="number" onChange={event => heightChange(event)} />
+        <input type="text" onChange={event => heightChange(event)} />
       </div>
       <button onClick={onClickHandler}>Set</button>
     </SizeModifierBlock>
