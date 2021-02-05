@@ -12,7 +12,6 @@ const SizeModifier = () => {
   }
   const widthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setWidth(Number(e.target.value))
-    console.log(size)
   }
   const heightChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setHeight(Number(e.target.value))
