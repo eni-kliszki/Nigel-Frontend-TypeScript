@@ -39,10 +39,16 @@ export const ConveyorItem = styled.div`
     transition: 500ms;
     opacity: 100%;
     background-color: yellowgreen;    //TEMP
-    &.hidden {
-        z-index: 0;
-        opacity: 0;
+    &.left {
+        left: -100%;
         transition: 500ms;
+        z-index:-1;
+    };
+    &.right {
+        left: 100%;
+        transition: 500ms;
+        z-index:-1;
+
     }
 
 `
