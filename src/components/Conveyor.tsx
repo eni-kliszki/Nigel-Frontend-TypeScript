@@ -14,7 +14,14 @@ export const Conveyor = (props : object) => {
     let itemIndex: number = 0;
     items = ["First", "Second", "Third", "Fourth", "Fifth"]
 
+    const initClassNames:string[] = ["center", "left hidden", "right hidden"];
+
     
+    const repeat = setInterval(() => {
+        leftButtonHandler();
+    }, 10000)
+    
+    //clearInterval(repeat)
 
     function leftButtonHandler() {
         let conveyor = document.getElementById("conveyor");
@@ -73,35 +80,26 @@ export const Conveyor = (props : object) => {
         }
     }
 
+    
 
     return(
         <ConveyorContainer id="conveyor">
-            <ConveyorItem className="center">
-                <ConveyorItemContent className="content">
-                    Here comes the very great and catchy message that makes you click on the article
-                </ConveyorItemContent>
-                <ConveyorItemImage className="image">
-                    This is an image despite appaering to be a pink rectangle
-                </ConveyorItemImage>
-            </ConveyorItem>
-            <ConveyorItem className="left hidden">
-                <ConveyorItemContent className="content">
-                   This is the left
-                </ConveyorItemContent>
-                <ConveyorItemImage className="image">
-                    This is an image despite appaering to be a pink rectangle
-                </ConveyorItemImage>
-            </ConveyorItem>
-            <ConveyorItem className="right hidden">
-                <ConveyorItemContent className="content">
-                    this is the right
-                </ConveyorItemContent>
-                <ConveyorItemImage className="image">
-                    This is an image despite appaering to be a pink rectangle
-                </ConveyorItemImage>
-            </ConveyorItem>
+            {initClassNames.map((classNames: string) => {
+                return (
+                    <ConveyorItem className={classNames}>
+                    <   ConveyorItemContent className="content">
+                        </ConveyorItemContent>
+
+                        <ConveyorItemImage className="image">
+                            This is a picture
+                        </ConveyorItemImage>
+                    </ConveyorItem>
+                )
+            })}
+
             <PrevButton onClick={leftButtonHandler}/>
             <NextButton onClick={rightButtonHandler}/>
         </ConveyorContainer>
     );
 }
+
