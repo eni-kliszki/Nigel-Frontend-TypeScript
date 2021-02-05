@@ -10,8 +10,8 @@ import { ConveyorContainer,
 import { useState } from "react";
 
 export const Conveyor = (props : object) => {
-    const [ visibleItemIndex, setVisibleItemIndex ] = useState<number>();
     let items:string[];
+    let itemIndex: number = 0;
     items = ["First", "Second", "Third", "Fourth", "Fifth"]
 
     //Alternating ConveyorItems (A, B or smthng) that should be filled 
@@ -26,12 +26,18 @@ export const Conveyor = (props : object) => {
         let conveyor = document.getElementById("conveyor");
         let leftElement = conveyor?.querySelector(".left");
         let centerElement = conveyor?.querySelector(".center");
+        let rightElement = conveyor?.querySelector(".right");
 
         centerElement?.classList.add("right");
+        centerElement?.classList.add("hidden");
         centerElement?.classList.remove("center")
 
         leftElement?.classList.add("center")
         leftElement?.classList.remove("left")
+        leftElement?.classList.remove("hidden")
+
+        rightElement?.classList.add("left")
+        rightElement?.classList.remove("right")
 
     }
 
@@ -51,7 +57,7 @@ export const Conveyor = (props : object) => {
                     This is an image despite appaering to be a pink rectangle
                 </ConveyorItemImage>
             </ConveyorItem>
-            <ConveyorItem className="left">
+            <ConveyorItem className="left hidden">
                 <ConveyorItemContent className="content">
                    This is the left
                 </ConveyorItemContent>
@@ -59,7 +65,7 @@ export const Conveyor = (props : object) => {
                     This is an image despite appaering to be a pink rectangle
                 </ConveyorItemImage>
             </ConveyorItem>
-            <ConveyorItem className="right">
+            <ConveyorItem className="right hidden">
                 <ConveyorItemContent className="content">
                     this is the right
                 </ConveyorItemContent>

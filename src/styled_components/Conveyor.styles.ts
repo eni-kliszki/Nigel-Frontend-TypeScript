@@ -5,6 +5,7 @@ export const ConveyorContainer = styled.div`
     width: 100vw;
     height: 50vh;
     background-color: #52B788;
+    overflow: hidden;
 ;
 
 `
@@ -17,6 +18,7 @@ export const NextButton = styled.div`
     height: 40%;
     cursor: pointer;
     background-color: red;         //TEMP
+    z-index: 1;
 `
 
 export const PrevButton = styled.div`
@@ -27,6 +29,8 @@ export const PrevButton = styled.div`
     height: 40%;
     cursor: pointer;
     background-color: red;         //TEMP
+    z-index: 1;
+
 `
 
 export const ConveyorItem = styled.div`
@@ -42,13 +46,13 @@ export const ConveyorItem = styled.div`
     &.left {
         left: -100%;
         transition: 500ms;
-        z-index:-1;
     };
     &.right {
         left: 100%;
         transition: 500ms;
-        z-index:-1;
-
+    };
+    &.hidden {
+        opacity: 0;
     }
 
 `
