@@ -1,5 +1,5 @@
 //styles
-import {Nav, LinkContainer, Link, RightSide, LeftSide} from './Navbar.styles';
+import {Nav, LinkContainer, Link, RightSide, LeftSide} from '../styled_components/Navbar.styles';
 //translation
 import { useTranslation } from 'react-i18next';
 
