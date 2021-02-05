@@ -7,7 +7,7 @@ import { ConveyorContainer,
         ConveyorItemImage,
 } from "../styled_components/Conveyor.styles";
 //react
-import { useState } from "react";
+import { useEffect } from "react";
 
 export const Conveyor = (props : object) => {
     let items:string[];
@@ -16,12 +16,16 @@ export const Conveyor = (props : object) => {
 
     const initClassNames:string[] = ["center", "left hidden", "right hidden"];
 
-    
-    const repeat = setInterval(() => {
-        leftButtonHandler();
-    }, 10000)
-    
-    //clearInterval(repeat)
+
+    useEffect(() => {
+        const repeat = setInterval(() => {
+            rightButtonHandler();
+        }, 10000)
+        return () => {
+            clearInterval(repeat);
+        }
+    }, [props])
+
 
     function leftButtonHandler() {
         let conveyor = document.getElementById("conveyor");
@@ -46,6 +50,7 @@ export const Conveyor = (props : object) => {
         rightElement?.classList.remove("right")
 
     }
+
 
     function rightButtonHandler() {
         let conveyor = document.getElementById("conveyor");
