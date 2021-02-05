@@ -1,10 +1,11 @@
 //Components
 import { Conveyor } from "./Conveyor";
-
+//Styles
+import { MainPageContainer } from "../styled_components/MainPage.style";
 export const MainPage = () => {
     return(
-        <div>
+        <MainPageContainer>
             <Conveyor></Conveyor>
-        </div>
+        </MainPageContainer>
     );
 }
