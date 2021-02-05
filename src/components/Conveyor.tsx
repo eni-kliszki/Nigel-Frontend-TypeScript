@@ -19,61 +19,60 @@ export const Conveyor = (props : object) => {
 
     useEffect(() => {
         const repeat = setInterval(() => {
-            rightButtonHandler();
+            scroll(1);
         }, 10000)
         return () => {
             clearInterval(repeat);
         }
-    }, [props])
+    }, [])
 
 
     function leftButtonHandler() {
-        let conveyor = document.getElementById("conveyor");
-        let leftElement = conveyor?.querySelector(".left");
-        let centerElement = conveyor?.querySelector(".center");
-        let rightElement = conveyor?.querySelector(".right");
-
-        changeItemIndex(-1);
-
-        let content = leftElement?.querySelector(".content");
-        if (content) content.textContent = items[itemIndex];
-
-        centerElement?.classList.add("right");
-        centerElement?.classList.add("hidden");
-        centerElement?.classList.remove("center")
-
-        leftElement?.classList.add("center")
-        leftElement?.classList.remove("left")
-        leftElement?.classList.remove("hidden")
-
-        rightElement?.classList.add("left")
-        rightElement?.classList.remove("right")
-
+       scroll(-1);
     }
 
 
     function rightButtonHandler() {
+
+       scroll(1);
+    }
+
+    //direction: -1 left 1 right
+    function scroll(direction: number) {
         let conveyor = document.getElementById("conveyor");
         let leftElement = conveyor?.querySelector(".left");
         let centerElement = conveyor?.querySelector(".center");
         let rightElement = conveyor?.querySelector(".right");
-
-        changeItemIndex(1);
-
-        let content = rightElement?.querySelector(".content");
+        let classes: string[];
+        
+        
+        let content:any;
+        
+        if (direction < 0) {
+            content = leftElement?.querySelector(".content");
+            classes = ["right", "left", "none", "center", "hidden"]
+        } else {
+            content = rightElement?.querySelector(".content");
+            classes = ["left", "center", "hidden", "right", "none"]
+        }
+        
+        changeItemIndex(direction);
         if (content) content.textContent = items[itemIndex];
 
-        centerElement?.classList.add("left");
+
+        centerElement?.classList.add(classes[0]);
         centerElement?.classList.add("hidden");
         centerElement?.classList.remove("center")
 
-        rightElement?.classList.add("center")
+        rightElement?.classList.add(classes[1])
         rightElement?.classList.remove("right")
-        rightElement?.classList.remove("hidden")
+        rightElement?.classList.remove(classes[2])
 
-        leftElement?.classList.add("right")
+        leftElement?.classList.add(classes[3])
         leftElement?.classList.remove("left")
+        leftElement?.classList.remove(classes[4])
     }
+
 
     function changeItemIndex(change: number) {
         if (itemIndex + change > items.length - 1) {
@@ -93,8 +92,8 @@ export const Conveyor = (props : object) => {
                 return (
                     <ConveyorItem className={classNames}>
                     <   ConveyorItemContent className="content">
+                            {items[itemIndex]}
                         </ConveyorItemContent>
-
                         <ConveyorItemImage className="image">
                             This is a picture
                         </ConveyorItemImage>
