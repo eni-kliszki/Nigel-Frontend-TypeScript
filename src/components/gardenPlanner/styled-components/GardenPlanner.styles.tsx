@@ -67,8 +67,5 @@ export const FullField = styled.div<{width: number, height: number}>`
   flex-wrap: wrap;
   flex-grow: 0;
   flex-shrink: 0;
-  border: 2px solid black;
-  justify-content: flex-start;
-  align-content: flex-start; 
 
 `
