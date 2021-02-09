@@ -63,7 +63,7 @@ export const FullField = styled.div<{width: number, height: number}>`
   position: relative;
   display: flex;
   width: ${props => props.width}px;
-  height: ${props => props.width}px;
+  height: ${props => props.height}px;
   flex-wrap: wrap;
   flex-grow: 0;
   flex-shrink: 0;
